@@ -6,7 +6,7 @@ weight = 3
 
 # Trace it now
 
-**Trace it now** is a remote tracing debugger for distributed system.
+**Trace It Now** is a remote tracing debugger for distributed system.
 
 ![](/logo.svg)
 

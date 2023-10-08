@@ -29,7 +29,6 @@
 
     <div class="hero">
         {% block hero %}
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
         <section class="text-center">
             <h1 class="heading-text" style="font-size: 50px">
 				Stop logging, {{ macros::yb(text="Start Debugging.") }}
@@ -105,7 +104,7 @@
 
         <div class="content text">
             {% block content %}
-			<!--<div id="features" class="heading-text">Overview</div>-->
+			<div id="features" class="heading-text"></div>
             {{ section.content | safe }}
             {% endblock content %}
         </div>
@@ -137,8 +136,9 @@
         // let url = new URL(`#${entry.target.id}`);
         let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
         if (link) {
+			console.log("scrolls", link);
             link.classList.add("active");
-            link.scrollIntoView({ behavior: "auto", block: "nearest" });
+			//link.scrollIntoView({ behavior: "auto", block: "nearest" });
         }
     };
     // Set -100px root margin to improve highlight experience.

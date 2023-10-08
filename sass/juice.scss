@@ -20,9 +20,9 @@ ul {
   margin-top: 0.5rem;
 }
 
-ul > li {
+/*ul > li {
   padding: 0.3rem 0;
-}
+}*/
 
 p > img {
   width: 100%;
@@ -68,7 +68,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--primary-color);
   overflow-x: hidden;
   padding: 0 40px;
@@ -176,7 +176,7 @@ footer {
   }
 
   .hero {
-    padding: 40px 30px;
+	padding: 40px 30px;
   }
 
   main {
