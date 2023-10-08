@@ -3,37 +3,37 @@
 <html lang="{{ lang }}">
 
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% block favicon %}
-    <link rel="icon" type="image/png" href="/favicon.ico">
-    {% endblock favicon %}
-    {% include "_variables.html" %}
-    {% block fonts %}
-    <link href="https://fonts.googleapis.com/css?family=Bebas Neue&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
-    {% endblock fonts %}
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="{{ get_url(path="juice.css") }}">
-    {% block head %}
-    {% endblock head %}
+	<meta charset="UTF-8">
+	<title>{% block title %}{{ config.title }}{% endblock title %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	{% block favicon %}
+	<link rel="icon" type="image/png" href="/favicon.ico">
+	{% endblock favicon %}
+	{% include "_variables.html" %}
+	{% block fonts %}
+	<link href="https://fonts.googleapis.com/css?family=Bebas Neue&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+	{% endblock fonts %}
+	<link rel="stylesheet" href="/normalize.css">
+	<link rel="stylesheet" href="{{ get_url(path="juice.css") }}">
+	{% block head %}
+	{% endblock head %}
 </head>
 
 <body>
-    {% block header %}
+	{% block header %}
 
-    <header class="pos-absolute" style="background-color: transparent">
-        {{ macros::render_header() }}
-    </header>
+	<header class="pos-absolute" style="background-color: transparent">
+		{{ macros::render_header() }}
+	</header>
 
-    <div class="hero">
-        {% block hero %}
-        <section class="text-center">
-            <h1 class="heading-text" style="font-size: 50px">
+	<div class="hero">
+		{% block hero %}
+		<section class="text-center">
+			<h1 class="heading-text" style="font-size: 50px">
 				Stop logging, {{ macros::yb(text="Start Debugging.") }}
-            </h1>
-            <h3 class="title-text">
+			</h1>
+			<h3 class="title-text">
 				<p>
 					<b>Trace It Now</b> is a remote tracing debugger for distributed system.
 				</p>
@@ -45,106 +45,106 @@
 					{{ macros::yb(text="at runtime") }}, in development, in staging,
 					{{ macros::yb(text="in production.") }}
 				</p>
-            </h3>
-            <div>
-            </div>
-        </section>
-        <img class="hero-image" style="width: 50%" src="{{ get_url(path="logo.svg") }}">
+			</h3>
+			<div>
+			</div>
+		</section>
+		<img class="hero-image" style="width: 50%" src="{{ get_url(path="logo.svg") }}">
 
-        <div class="explore-more text"
-            onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
-            Explore More ⇩
-        </div>
-        <style>
-            .hero section {
-                padding: 0 5rem;
-            }
+		<div class="explore-more text"
+			onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+			Explore More ⇩
+		</div>
+		<style>
+			.hero section {
+				padding: 0 5rem;
+			}
 
-            @media screen and (max-width: 768px) {
-                .hero section {
-                    padding: 0 2rem;
-                }
+			@media screen and (max-width: 768px) {
+				.hero section {
+					padding: 0 2rem;
+				}
 
-                .hero-image {
-                    display: none
-                }
-            }
-        </style>
-        {% endblock hero %}
-    </div>
+				.hero-image {
+					display: none
+				}
+			}
+		</style>
+		{% endblock hero %}
+	</div>
 
-    {% endblock header %}
+	{% endblock header %}
 
-    <main>
-        {% block toc %}
-        {% if section.toc %}
-        {% set toc = section.toc %}
-        {% elif page.toc %}
-        {% set toc = page.toc %}
-        {% endif %}
-        {% if toc %}
-        <div class="toc">
-            <div class="toc-sticky">
-                {% for h in toc %}
-                <div class="toc-item">
-                    <a class="subtext" href="{{h.permalink | safe}}">{{ h.title }}</a>
-                </div>
-                {% if h.children %}
-                {% for h2 in h.children %}
-                <div class="toc-item-child">
-                    <a class="subtext" href="{{h2.permalink | safe}}"><small>- {{ h2.title }}</small></a>
-                </div>
-                {% endfor %}
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-        {% endblock toc %}
+	<main>
+		{% block toc %}
+		{% if section.toc %}
+		{% set toc = section.toc %}
+		{% elif page.toc %}
+		{% set toc = page.toc %}
+		{% endif %}
+		{% if toc %}
+		<div class="toc">
+			<div class="toc-sticky">
+				{% for h in toc %}
+				<div class="toc-item">
+					<a class="subtext" href="{{h.permalink | safe}}">{{ h.title }}</a>
+				</div>
+				{% if h.children %}
+				{% for h2 in h.children %}
+				<div class="toc-item-child">
+					<a class="subtext" href="{{h2.permalink | safe}}"><small>- {{ h2.title }}</small></a>
+				</div>
+				{% endfor %}
+				{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+		{% endif %}
+		{% endblock toc %}
 
-        <div class="content text">
-            {% block content %}
+		<div class="content text">
+			{% block content %}
 			<div id="features" class="heading-text"></div>
-            {{ section.content | safe }}
-            {% endblock content %}
-        </div>
+			{{ section.content | safe }}
+			{% endblock content %}
+		</div>
 
-        {% block sidebar %}
-        {% endblock sidebar %}
-    </main>
+		{% block sidebar %}
+		{% endblock sidebar %}
+	</main>
 
-    {% block footer %}
-    <footer>
-        <small class="subtext">
-            <a href="https://www.traceitnow.com">traceitnow.com</a>
-        </small>
-    </footer>
-    {% endblock footer %}
+	{% block footer %}
+	<footer>
+		<small class="subtext">
+			<a href="https://www.traceitnow.com">traceitnow.com</a>
+		</small>
+	</footer>
+	{% endblock footer %}
 </body>
 <script>
-    const scrollHandler = entries => {
-        // Find the first entry which intersecting and ratio > 0.9 to highlight.
-        let entry = entries.find(entry => {
-            return entry.isIntersecting && entry.intersectionRatio > 0.9;
-        });
-        if (!entry) return;
+	const scrollHandler = entries => {
+		// Find the first entry which intersecting and ratio > 0.9 to highlight.
+		let entry = entries.find(entry => {
+			return entry.isIntersecting && entry.intersectionRatio > 0.9;
+		});
+		if (!entry) return;
 
-        document.querySelectorAll(".toc a").forEach((item) => {
-            item.classList.remove("active");
-        });
+		document.querySelectorAll(".toc a").forEach((item) => {
+			item.classList.remove("active");
+		});
 
-        // let url = new URL(`#${entry.target.id}`);
-        let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
-        if (link) {
+		// let url = new URL(`#${entry.target.id}`);
+		let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
+		if (link) {
 			console.log("scrolls", link);
-            link.classList.add("active");
+			link.classList.add("active");
 			//link.scrollIntoView({ behavior: "auto", block: "nearest" });
-        }
-    };
-    // Set -100px root margin to improve highlight experience.
-    const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
-    let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
-    items.forEach(item => observer.observe(item));
+		}
+	};
+	// Set -100px root margin to improve highlight experience.
+	const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
+	let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+	items.forEach(item => observer.observe(item));
 </script>
 
 </html>
