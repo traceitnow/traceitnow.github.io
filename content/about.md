@@ -8,7 +8,7 @@ weight = 3
 
 **Trace It Now** is a remote tracing debugger for distributed system.
 
-![](/logo.svg)
+![](/logo.png)
 
 # Contact
 
