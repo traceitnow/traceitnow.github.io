@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="icon" type="image/png" href="/favicon.ico">
+	
+	<style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #0064b4;
+        /* Primary theme text color */
+        --primary-text-color: #000000;
+        --primary-text-color-over: #ffb400;
+        /* Primary theme link color */
+        --primary-link-color: #ffb400;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #0064b4;
+        --toc-background-color: white;
+        --code-color: #4a4a4a;
+        --code-background-color: white;
+
+        --shadow-color: #ddd;
+
+        /* Font used for headers (h1 & h2) */
+		--header-font-family: "Fira Sans", sans-serif;
+        /* Font used for text */
+		--text-font-family: "Fira Sans", sans-serif;
+    }
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--secondary-color: #9c9a96;
+			--toc-background-color: grey;
+		}
+	}
+</style>
+
+	
+	<link href="https://fonts.googleapis.com/css?family=Bebas Neue&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+	
+	<link rel="stylesheet" href="/normalize.css">
+	<link rel="stylesheet" href="https://www.traceitnow.com/juice.css">
+	
+	
+</head>
+
+<body>
+	
+
+	<header class="pos-absolute" style="background-color: transparent">
+		
+
+<a href="https://www.traceitnow.com/">
+    <div class="logo">
+        <img src="https://www.traceitnow.com/logo.png" alt="logo">
+		Trace It Now
+    </div>
+</a>
+
+<nav>
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://www.traceitnow.com/about/">About</a>
+    
+    
+    
+</nav>
+
+	</header>
+
+	<div class="hero">
+		
+		<section class="text-center">
+			<h1 class="heading-text" style="font-size: 50px">
+				Stop logging, 
+<div style="color: #ffb400; display: inline-block; font-weight: bold;">
+	Start Debugging.
+</div>
+
+			</h1>
+			<h3 class="title-text">
+				<p>
+					<b>Trace It Now</b> is a remote tracing debugger for distributed system.
+				</p>
+				<p>
+					Stop sprinkling logs statements around to leave them behind.
+				</p>
+				<p>
+					
+<div style="color: #ffb400; display: inline-block; font-weight: bold;">
+	Trace
+</div>
+ your distributed services <b>now</b>,
+					
+<div style="color: #ffb400; display: inline-block; font-weight: bold;">
+	at runtime
+</div>
+, in development, in staging,
+					
+<div style="color: #ffb400; display: inline-block; font-weight: bold;">
+	in production.
+</div>
+
+				</p>
+			</h3>
+			<div>
+			</div>
+		</section>
+		<img class="hero-image" style="width: 50%" src="https://www.traceitnow.com/logo.png">
+
+		<div class="explore-more text"
+			onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+			Explore More ⇩
+		</div>
+		<style>
+			.hero section {
+				padding: 0 5rem;
+			}
+
+			@media screen and (max-width: 768px) {
+				.hero section {
+					padding: 0 2rem;
+				}
+
+				.hero-image {
+					display: none
+				}
+			}
+		</style>
+		
+	</div>
+
+	
+
+	<main>
+		
+		
+		
+		
+		
+		<div class="toc">
+			<div class="toc-sticky">
+				
+				<div class="toc-item">
+					<a class="subtext" href="https://www.traceitnow.com/#overview">Overview</a>
+				</div>
+				
+				
+				<div class="toc-item">
+					<a class="subtext" href="https://www.traceitnow.com/#problem">Problem</a>
+				</div>
+				
+				
+				<div class="toc-item">
+					<a class="subtext" href="https://www.traceitnow.com/#solution">Solution</a>
+				</div>
+				
+				
+			</div>
+		</div>
+		
+		
+
+		<div class="content text">
+			
+			<div id="features" class="heading-text"></div>
+			<h1 id="overview">Overview</h1>
+<p><strong>Trace It Now</strong> is a remote tracing debugger for distributed systems!</p>
+<p>We are going to create the first remote tracing debugger for distributed
+systems (think microservices running on Kubernetes).</p>
+<h1 id="problem">Problem</h1>
+<p>The current state of the art of &quot;printf debugging&quot; is extremely costly:</p>
+<ul>
+<li>Requires source code modifications, which can introduce more bugs.</li>
+<li>Requires frequent deployment, which is time consuming.</li>
+<li>It is error prone, as all code changes are.</li>
+<li>Logs are left behind, costing extra resources.</li>
+<li>Programmers are only allowed to debug in production as a last resort.</li>
+</ul>
+<h1 id="solution">Solution</h1>
+<p>Our solution is a tracing debugger that will run remotely alongside your microservices: </p>
+<ul>
+<li>It traces the code at runtime on demand, driven by a central user interface.</li>
+<li>It doesn't require code changes and does not leave logs behind.</li>
+<li>It can trace the code across services.</li>
+<li>And in addition, debugging in production is now safe and easy.</li>
+</ul>
+
+			
+		</div>
+
+		
+		
+	</main>
+
+	
+	<footer>
+		<small class="subtext">
+			<a href="https://www.traceitnow.com">traceitnow.com</a>
+		</small>
+	</footer>
+	
+</body>
+<script>
+	const scrollHandler = entries => {
+		// Find the first entry which intersecting and ratio > 0.9 to highlight.
+		let entry = entries.find(entry => {
+			return entry.isIntersecting && entry.intersectionRatio > 0.9;
+		});
+		if (!entry) return;
+
+		document.querySelectorAll(".toc a").forEach((item) => {
+			item.classList.remove("active");
+		});
+
+		// let url = new URL(`#${entry.target.id}`);
+		let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
+		if (link) {
+			console.log("scrolls", link);
+			link.classList.add("active");
+			//link.scrollIntoView({ behavior: "auto", block: "nearest" });
+		}
+	};
+	// Set -100px root margin to improve highlight experience.
+	const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
+	let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+	items.forEach(item => observer.observe(item));
+</script>
+
+</html>
