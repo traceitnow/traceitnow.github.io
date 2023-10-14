@@ -6,7 +6,7 @@ sort_by = "weight"
 
 # Overview
 
-**Trace It Now** is a remote tracing debugger for distributed systems.
+**Trace It Now** is a remote tracing debugger for distributed systems!
 
 We are going to create the first remote tracing debugger for distributed
 systems (think microservices running on Kubernetes).
